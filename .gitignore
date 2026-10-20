@@ -1,0 +1,19 @@
+# Dataset files
+data/
+*.csv
+*.xlsx
+*.xls
+*.json
+*.zip
+
+# Python environments
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local configuration and secrets
+.env
