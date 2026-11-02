@@ -102,6 +102,36 @@ The study protocol describes the cycle-adaptive trial design, but I haven't foun
 
 For now, I've left the original data unchanged. My next step is to check whether the same patterns occur in other participants and look for more information about how these fields were defined.
 
+## 6. Checking imputation across phases
+
+I wanted to see whether imputed rows were distributed equally across the three inferred phases. I counted the imputed and non-imputed rows in A1, A2, and B.
+
+A1 had 197 imputed rows out of 334 (59.0%), A2 had 759 out of 798 (95.1%), and B had 900 out of 1,028 (87.5%).
+
+I noticed that A2 had a much higher percentage of imputed rows than A1. B also had a high percentage.
+
+Since 17 participants had no non-imputed rows at all, I repeated the calculation using only the other 19 participants.
+
+The percentages were lower, but the pattern was the same: A1 had 37.4% imputed rows, A2 had 89.3%, and B had 77.1%.
+
+So, excluding participants whose entire timelines were imputed did not change the overall pattern. I still don't know why the percentages differ between phases.
+
+## 7. Checking imputation for individual participants
+
+I also counted the imputed and non-imputed rows for each participant in each inferred phase.
+
+The results showed that participants don't all have the same amount of non-imputed data in each phase. For example, ID01–ID04 had non-imputed rows in all three phases, while ID15 had non-imputed rows only in B. ID17 had no A2 phase in its inferred timeline.
+
+Some participants had no non-imputed rows in A2, B, or both. This is worth looking into because it means that the amount of measured data available for each participant differs between phases.
+
+I haven't calculated the imputation percentages for each participant yet.
+
+## 8. Next step
+
+Next, I want to calculate the imputation percentage for each participant in each phase. This should help me see whether the high percentages in A2 and B are common across participants or mainly due to a few of them.
+
+After that, I'll decide whether there are any other data-quality issues I need to investigate before moving on to exploring pain, symptoms, and the other variables.
+
 ## Sources
 
 - MPIS Study Data, Zenodo: https://zenodo.org/records/21538147
