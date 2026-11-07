@@ -513,3 +513,83 @@ participant_phase_counts = df_with_data.groupby(
 # Print the results.
 print("\nImputation counts by participant and phase (19 participants):")
 print(participant_phase_counts.to_string())
+
+
+
+# Count all rows for each participant and phase.
+phase_totals = df_with_data.groupby(
+    ["invite_code", "inferred_phase"]
+).size()
+
+# Print the results.
+print("\nTotal rows per participant and phase:")
+print(phase_totals.to_string())
+
+
+
+# Select only the rows that were imputed.
+imputed_rows = df_with_data[df_with_data["imputed"] == True]
+
+# Count imputed rows for each participant and phase.
+imputed_totals = imputed_rows.groupby(
+    ["invite_code", "inferred_phase"]
+).size()
+
+# Create a table using the total number of rows for each participant and phase.
+participant_phase_summary = phase_totals.to_frame(
+    name="total_rows"
+)
+
+# Add the imputed row counts to the table.
+participant_phase_summary["imputed_rows"] = imputed_totals
+
+# Replace missing values with zero.
+participant_phase_summary["imputed_rows"] = (
+    participant_phase_summary["imputed_rows"].fillna(0)
+)
+
+# Calculate the number of non-imputed rows.
+participant_phase_summary["non_imputed_rows"] = (
+    participant_phase_summary["total_rows"]
+    - participant_phase_summary["imputed_rows"]
+)
+
+# Calculate the percentage of imputed rows.
+participant_phase_summary["imputed_percentage"] = (
+    participant_phase_summary["imputed_rows"]
+    / participant_phase_summary["total_rows"]
+) * 100
+
+# Print the results, rounded to one decimal place.
+print("\nImputation percentages by participant and phase:")
+print(participant_phase_summary.round(1).to_string())
+
+
+
+# Group the participant-level results by phase. and choose only one column "imputed_percentage"
+phase_percentage_summary = participant_phase_summary.groupby(
+    "inferred_phase"
+)["imputed_percentage"]
+
+# Calculate the median imputation percentage for each phase.
+phase_median = phase_percentage_summary.median()
+
+# Calculate the minimum imputation percentage for each phase.
+phase_minimum = phase_percentage_summary.min()
+
+# Calculate the maximum imputation percentage for each phase.
+phase_maximum = phase_percentage_summary.max()
+
+# Count the number of participants represented in each phase.
+phase_participant_count = phase_percentage_summary.count()
+
+# Combine the results into one table.
+phase_summary = phase_median.to_frame(name="median_percentage")
+
+phase_summary["minimum_percentage"] = phase_minimum
+phase_summary["maximum_percentage"] = phase_maximum
+phase_summary["participant_count"] = phase_participant_count
+
+# Print the summary.
+print("\nParticipant-level imputation percentage summary:")
+print(phase_summary.round(1).to_string())
