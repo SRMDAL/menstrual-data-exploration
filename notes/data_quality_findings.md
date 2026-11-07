@@ -230,13 +230,23 @@ The average values were:
 
 The median was 0 for all four outcomes in all three phases.
 
-I also counted how many values were zero. A1 had more non-zero pain, mood, and symptom values than B and A2. For tablets, A1 and B both had 9 non-zero values, while A2 had none.
+I also counted how many values were zero and non-zero in each phase. A1 had more non-zero pain, mood, and symptom observations than B and A2. For tablets, A1 and B both had 9 non-zero observations, while A2 had none.
 
-A2 had much fewer non-imputed rows than the other phases, so I need to keep that in mind when comparing the results.
+These are raw counts, not percentages. Since the number of non-imputed observations differs between phases, the counts should not be interpreted as directly comparable rates.
+
+A2 had far fewer non-imputed rows than the other phases, so this needs to be considered when comparing the results.
 
 These are just comparisons between the phases. They don't show that the intervention caused the differences.
 
 I only used non-imputed values for this check.
+
+### Visualising observed outcomes
+
+I also created plots to visualise the average, zero, and non-zero values of the four outcomes across the study phases.
+
+The plots use only non-imputed observations. They provide a visual summary of the results and make it easier to compare the outcome patterns across phases.
+
+The number of non-imputed observations differs considerably between phases, particularly in A2. Therefore, the plots should be interpreted alongside the observation counts rather than on their own.
 
 ## Sources
 

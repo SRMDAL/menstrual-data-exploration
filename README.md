@@ -4,6 +4,8 @@ A small data exploration project using the Menstrual Pain Intervention Among Stu
 
 The goal is to understand the structure of the dataset, examine missing and imputed data, and explore the recorded outcomes across the study phases.
 
+Detailed findings are documented in [Data Quality Findings](notes/data_quality_findings.md).
+
 ## Dataset
 
 The project uses the MPIS Study Data Zenodo dataset:
@@ -13,7 +15,7 @@ The project uses the MPIS Study Data Zenodo dataset:
 - **Published:** January 3, 2026
 - **License:** CC BY 4.0
 
-The dataset contains data from 36 participants in 60-day trials. It includes self-reported pain, painkiller use, mood, symptoms, and other study information.
+The dataset contains 60-day trial records from 36 participants. It includes self-reported pain, painkiller use, mood, symptoms, and other study information.
 
 The dataset is not included in this repository. Download it separately and place the cleaned CSV file in the `data/` folder as `cleaned_studyu_data.csv`.
 
@@ -24,7 +26,7 @@ The dataset is not included in this repository. Download it separately and place
 - Differences between recorded and inferred timelines.
 - Baseline menstrual history.
 - Pain, painkiller use, mood, and symptom counts across study phases.
-- Average, zero, and non-zero outcome values using non-imputed records.
+- Descriptive statistics and visualisations of average, zero, and non-zero outcome values using non-imputed records.
 
 ## Tools
 
